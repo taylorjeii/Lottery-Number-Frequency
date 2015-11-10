@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+  <title>NY Lottery - Code Challenge</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body ng-controller="mainCtrl" ng-cloak>
+  <div class="container">
+    <div class="row text-center">
+      <h1>Lottery Number Frequency</h1>
+      <small>*hover to see exact # of draws</small>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 text-center">
+        <div class="graph" style="width:{{width}}px; height:400px;">
+
+          <div class="y" style="width:{{height}}px;">
+            <h3 class="yAxisLabel">{{yAxis}}</h3>
+          </div>
+
+          <div class="x">
+            <h3  class="yAxisLabel">{{xAxis}}</h3>
+          </div>
+
+          <div ng-repeat="(key, value) in frequency track by $index | toArray | orderBy:'value' "
+               class="bar animate-repeat"
+               style="height:{{value / max * height}}px; width:{{width / frequency.length - 5}}px; left:{{$index / frequency.length * width}}px;"
+               data-toggle="tooltip" title="{{key}} has been drawn {{value}} times">
+
+              <div class="keyLabel text-center" ng-class="{{key}} < 10 ? 'single-digit' : ({{key}} >= 10 ? 'double-digit' : '')"><p>{{key}}</p></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+  <script src="toArrayFilter.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular-animate.js"></script>
+  <script src="app.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+     $('body').tooltip({
+        selector: '[data-toggle="tooltip"]'
+    });
+  </script>
+
+</body>
+</html>

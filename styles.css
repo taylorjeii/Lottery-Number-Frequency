@@ -1,0 +1,107 @@
+body{
+  background: black;
+  color: white;
+}
+div.row{
+  width: 1300px;
+}
+
+li{
+  margin-bottom: 10px;
+  color: white;
+  list-style-type: none;
+}
+.li-container{
+  width: 100px;
+  height: 100px;
+  border-radius:10px;
+  background-color: white;
+}
+
+
+.chart {
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+  margin: 60px auto;
+  position: relative;
+}
+
+.y {
+  position: absolute;
+  transform: rotate(-90deg);
+  transform-origin: bottom left;
+  bottom: 0;
+  padding: 0px;
+  left:0;
+  margin-bottom: 10em; ;
+}
+
+.x {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  padding: 5px;
+}
+
+.bar {
+  background-color: blue;
+  position: absolute;
+  bottom: 0;
+}
+
+.bar:hover{
+  opacity: 0.7;
+}
+
+.graph{
+  margin: 0 auto;
+}
+
+.keyLabel{
+  font-size:.8em;
+  position: absolute;
+  bottom: 0;
+}
+
+.tooltip{
+  top: 0;
+  position: absolute;
+  color: white;
+  font-size:.8em;
+  z-index: 100;
+}
+.single-digit{
+  padding-left: 5px;
+}
+
+.double-digit{
+  padding-left: 2px;
+}
+
+.tooltip-inner{
+  border:1px solid white;
+}
+
+.animate-repeat.ng-enter {
+  -webkit-transition:all linear 0.5s;
+  transition:all linear 0.5s;
+}
+
+.animate-repeat.ng-enter {
+  opacity:0;
+
+}
+
+.animate-repeat.ng-leave,
+.animate-repeat.ng-move.ng-move-active,
+.animate-repeat.ng-enter.ng-enter-active {
+  opacity:1;
+
+}
+
+.animate-repeat.ng-enter-stagger {
+    -webkit-transition-delay: 0.1s;
+    transition-delay: 0.1s;
+    -webkit-transition-duration: 0s;
+    transition-duration: 0s;
+}
